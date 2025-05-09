@@ -1,0 +1,54 @@
+import java.util.Date;
+
+public class Prestamo {
+        private Date fechaInicio;
+            private Date fechaDevolucion;
+                private String estado;
+                    private Libro libro;
+                        private Usuario usuario;
+
+                            public Prestamo(Date fechaInicio, Date fechaDevolucion, String estado, Libro libro, Usuario usuario) {
+                                        this.fechaInicio = fechaInicio;
+                                                this.fechaDevolucion = fechaDevolucion;
+                                                        this.estado = estado;
+                                                                this.libro = libro;
+                                                                        this.usuario = usuario;
+                            }
+
+                                public Date getFechaInicio() {
+                                            return fechaInicio;
+                                }
+
+                                    public Date getFechaDevolucion() {
+                                                return fechaDevolucion;
+                                    }
+
+                                        public void setFechaDevolucion(Date fechaDevolucion) {
+                                                    this.fechaDevolucion = fechaDevolucion;
+                                        }
+
+                                            public String getEstado() {
+                                                        return estado;
+                                            }
+
+                                                public void setEstado(String estado) {
+                                                            this.estado = estado;
+                                                }
+
+                                                    public Libro getLibro() {
+                                                                return libro;
+                                                    }
+
+                                                        public Usuario getUsuario() {
+                                                                    return usuario;
+                                                        }
+}
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+}

@@ -1,0 +1,53 @@
+import java.util.ArrayList;
+import java.util.Date;
+
+public class Administrador extends Usuario {
+        private ArrayList<Cliente> clientes = new ArrayList<>();
+            private ArrayList<Libro> libros = new ArrayList<>();
+                private ArrayList<Prestamo> prestamos = new ArrayList<>();
+
+                    public Administrador(int id, String nombre, String correo) {
+                                super(id, nombre, correo);
+                    }
+
+                        public void registrarCliente(Cliente c) {
+                                    clientes.add(c);
+                                            System.out.println("Cliente registrado: " + c.getNombre());
+                        }
+
+                            public void registrarLibro(Libro l) {
+                                        libros.add(l);
+                                                System.out.println("Libro registrado: " + l.getTitulo());
+                            }
+
+                                public void realizarPrestamo(Usuario u, Libro l) {
+                                            if (l.isDisponible()) {
+                                                            l.setDisponible(false);
+                                                                        Prestamo p = new Prestamo(new Date(), null, "activo", l, u);
+                                                                                    prestamos.add(p);
+                                                                                                System.out.println("Préstamo realizado para: " + u.getNombre() + " - Libro: " + l.getTitulo());
+                                            } else {
+                                                            System.out.println("El libro no está disponible.");
+                                            }
+                                }
+
+                                    public void devolverLibro(Prestamo p) {
+                                                p.getLibro().setDisponible(true);
+                                                        p.setFechaDevolucion(new Date());
+                                                                p.setEstado("devuelto");
+                                                                        System.out.println("Libro devuelto: " + p.getLibro().getTitulo() + " por " + p.getUsuario().getNombre());
+                                    }
+
+                                        public ArrayList<Prestamo> getPrestamos() {
+                                                    return prestamos;
+                                        }
+}
+                                        }
+                                    }
+                                            }
+                                            }
+                                }
+                            }
+                        }
+                    }
+}
